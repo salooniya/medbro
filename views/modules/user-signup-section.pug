@@ -1,0 +1,18 @@
+section.auth.user-signup
+    inner
+        form
+            h1 Create account
+            h2
+                | Are you a doctor?
+                a(href='/doctors/signup')  Register here
+            input(type='text' id='first-name' spellcheck="false" placeholder='First Name')
+            input(type='text' id='last-name' spellcheck="false" placeholder='Last Name')
+            input(type='email' id='email' placeholder='Email')
+            input(type='password' id='password' placeholder='Password')
+            button(type='submit') SIGNUP
+            p
+                | By signing up, you agree to our
+                br
+                a(href='/terms-of-service')  Terms of Service
+                |  and
+                a(href='/privacy-policy')  Privacy Policy

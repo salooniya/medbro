@@ -1,0 +1,33 @@
+@import "modules/base";
+
+@import "modules/header";
+
+@import "modules/signup-section";
+
+@import "modules/doctor-profile-section";
+
+@import "modules/search-section";
+
+@import "modules/doctor-section";
+
+@import "modules/home-section";
+
+section.terms-of-service, section.privacy-policy {
+  inner {
+    padding: 5rem;
+  }
+
+  container {
+    border: 1px solid lightgray;
+    padding: 5rem;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.01);
+  }
+
+  h1 {
+    color: #212529;
+    font-size: $fz-m4;
+    font-weight: $fw-500;
+    text-align: center;
+  }
+}

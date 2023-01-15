@@ -1,0 +1,18 @@
+section.auth.doctor-signup
+    inner
+        form
+            h1 DOCTOR SIGNUP
+            h2
+                | Not a doctor?
+                a(href='/users/signup')  Click here
+            input(type='text' id='first-name' placeholder='First Name')
+            input(type='text' id='last-name' placeholder='Last Name')
+            input(type='email' id='email' placeholder='Email')
+            input(type='password' id='password' placeholder='Password')
+            button(type='submit') SIGNUP
+            p
+                | By signing up, you agree to our
+                br
+                a(href='/terms-of-service')  Terms of Service
+                |  and
+                a(href='/privacy-policy')  Privacy Policy

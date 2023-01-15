@@ -1,0 +1,262 @@
+section.doctor-profile, section.doctor-clinic, section.doctor-appointments,
+section.user-profile, section.user-appointments {
+  //padding: 5rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-top: 1px solid lightgray;
+
+  inner {
+    padding: 5rem;
+  }
+
+  container {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  box.menu {
+    flex: 1;
+    min-height: 50rem;
+    background-color: #1976d2;
+    padding: 5rem 0;
+
+    .menu-item {
+      padding: 1rem 5rem;
+      cursor: pointer;
+      color: white;
+      font-size: $fz-r6;
+      transition: background-color 0.1s;
+      text-decoration: none;
+      display: block;
+
+      &:hover {
+        background-color: #0D47A1;
+      }
+    }
+
+    .active {
+      background-color: #0D47A1;
+    }
+  }
+
+  box.window {
+    padding: 5rem;
+    flex: 3;
+    min-height: 50rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    label {
+      display: block;
+      font-size: $fz-r6;
+      font-weight: $fw-500;
+      margin-bottom: 0.5rem;
+    }
+
+    input, textarea {
+      display: block;
+      outline: none;
+      border: 1px solid lightgray;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: $fz-r6;
+      width: 100%;
+      color: #3f4449;
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+
+  .window-slab {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 100%;
+      cursor: pointer;
+      width: 25rem;
+      height: 25rem;
+
+      input {
+        display: none !important;
+        visibility: hidden !important;
+      }
+
+      .cover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: $fz-l4;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.1s;
+        z-index: 2;
+      }
+
+      &:hover .cover {
+        opacity: 1;
+      }
+
+      img {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .info {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+
+  .window-item.submit {
+    text-align: left;
+    margin-top: 5rem;
+  }
+
+  button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    outline: none;
+    background-color: #1976d2;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    font-size: $fz-r4;
+    transition: background-color 0.1s;
+
+    &:hover {
+      background-color: #0D47A1;
+    }
+  }
+
+  div.day {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+
+    h2 {
+      margin-right: auto;
+      font-size: $fz-r6;
+      font-weight: $fw-500;
+    }
+
+    p {
+      font-size: $fz-r6;
+      margin-left: 2rem;
+    }
+
+    input {
+      margin-left: 1rem;
+      width: unset;
+      padding: 0.5rem;
+      font-size: $fz-r4;
+    }
+  }
+
+  div.window-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .app {
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+      h2 {
+        font-size: $fz-r6;
+        font-weight: $fw-500;
+        margin-bottom: 0.4rem;
+
+        .fee {
+          float: right;
+        }
+      }
+
+      div.bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        div {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          button {
+            padding: 1rem;
+            font-size: $fz-r6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .accept {
+            background-color: forestgreen;
+          }
+
+          .reject {
+            background-color: #fa6363;
+          }
+
+          .accepted {
+            padding: 0;
+            font-size: $fz-r4;
+            background-color: white;
+            color: forestgreen;
+            font-weight: $fw-500;
+            cursor: default;
+          }
+
+          .rejected {
+            padding: 0;
+            font-size: $fz-r4;
+            background-color: white;
+            color: #fa6363;
+            font-weight: $fw-500;
+            cursor: default;
+          }
+
+          .pending {
+            padding: 0;
+            font-size: $fz-r4;
+            background-color: white;
+            color: gray;
+            font-weight: $fw-500;
+            cursor: default;
+          }
+        }
+      }
+
+      p {
+        font-size: $fz-r3;
+      }
+    }
+  }
+}

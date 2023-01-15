@@ -1,0 +1,65 @@
+section.doctor-clinic
+    inner
+        container
+            box.menu
+                a.menu-item(href=`/doctors/${id}/appointments`) Appointments
+                a.menu-item(href=`/doctors/${id}/profile`) Profile
+                a.menu-item.active(href=`/doctors/${id}/clinic`) Clinic
+                a.menu-item(href='/logout') Logout
+            box.window
+                div.window-item
+                    label(for='clinic-name') Clinic Name
+                    input(type='text' id='clinic-name' placeholder='Ex. Alps Clinic' value=`${doctor.clinicName || ''}`)
+                div.window-item
+                    label(for='clinic-location') Clinic Location
+                    input(type='text' id='clinic-location' placeholder='Ex. 24-A, Cyber Colony, Shahdra, Delhi' value=`${doctor.clinicLocation || ''}`)
+                div.window-item
+                    label(for='clinic-fee') Clinic Fee
+                    input(type='text' id='clinic-fee' placeholder='Ex. 500' value=`${doctor.clinicFee || ''}`)
+                div.window-item.timings
+                    label Clinic Timings
+                    div.day
+                        h2 Sunday
+                        p From
+                        input(class='clinic-time-From' value=`${timings[0].from}` type='time')
+                        p To
+                        input(class='clinic-time-To' value=`${timings[0].to}` type='time')
+                    div.day
+                        h2 Monday
+                        p From
+                        input(class='clinic-time-From' value=`${timings[1].from}` type='time' step='900')
+                        p To
+                        input(class='clinic-time-To' value=`${timings[1].to}` type='time')
+                    div.day
+                        h2 Tuesday
+                        p From
+                        input(class='clinic-time-From' value=`${timings[2].from}` type='time')
+                        p To
+                        input(class='clinic-time-To' value=`${timings[2].to}` type='time')
+                    div.day
+                        h2 Wednesday
+                        p From
+                        input(class='clinic-time-From' value=`${timings[3].from}` type='time')
+                        p To
+                        input(class='clinic-time-To' value=`${timings[3].to}` type='time')
+                    div.day
+                        h2 Thursday
+                        p From
+                        input(class='clinic-time-From' value=`${timings[4].from}` type='time')
+                        p To
+                        input(class='clinic-time-To' value=`${timings[4].to}` type='time')
+                    div.day
+                        h2 Friday
+                        p From
+                        input(class='clinic-time-From' value=`${timings[5].from}` type='time')
+                        p To
+                        input(class='clinic-time-To' value=`${timings[5].to}` type='time')
+                    div.day
+                        h2 Saturday
+                        p From
+                        input(class='clinic-time-From' value=`${timings[6].from}` type='time')
+                        p To
+                        input(class='clinic-time-To' value=`${timings[6].to}` type='time')
+
+                div.window-item.submit
+                    button(type='submit') SAVE CHANGES

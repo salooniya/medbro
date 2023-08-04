@@ -1,0 +1,16 @@
+header
+    inner
+        a(class='brand' href='/')
+            i healing
+            | Medbro
+        if type === 'doctors'
+            a(class='links user' href=`/${type}/${id}/profile`)
+                i account_circle
+                span Dr. #{fullName}
+        else if type === 'users'
+            a(class='links user' href=`/${type}/${id}/profile`)
+                i account_circle
+                span #{fullName}
+        else
+            a(class='links login' href='/login') Login
+            a(class='links signup' href='/users/signup') Signup

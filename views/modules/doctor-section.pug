@@ -1,0 +1,53 @@
+section.doctor
+    inner
+        container
+            box.top
+                div.image
+                    img(src=`/images/${doctor.profilePhoto}`)
+                div.info
+                    h2 Dr. #{doctor.firstName} #{doctor.lastName}
+                    h3 #{doctor.qualifications}
+                    h3 #{doctor.specializations}
+                    h3 #{doctor.experience} Years Experience
+                    p #{doctor.description}
+        //container
+        //    box.booking
+        //        h2 Alps Clinic
+        //        h3 285-B, Civil Colony, Delhi
+        //        p.fee ₹700
+        //    hr
+        //    box.booking
+        //        h2 Santra Clinic
+        //        h3 24-A, Cyber Colony, Shahdra
+        //        p.fee ₹500
+        container.book
+            box.book
+                h2.header
+                    span Clinic Appointment
+                    //p.change Change Clinic
+                    //    i expand_more
+                box.booking
+                    h2 #{doctor.clinicName}
+                    h3 #{doctor.clinicLocation}
+                    p.fee ₹#{doctor.clinicFee}
+            box.slot
+                h2
+                    i.left chevron_left
+                    span.prev Mon, 12 Jan
+                    span.active Tue, 13 Jan
+                    span.next Wed, 14 Jan
+                    i.right chevron_right
+                div.slots(data-timings=`${doctor.clinicTimings}`)
+                    slot 02:00 PM
+                    slot 02:15 PM
+                    slot 03:30 PM
+                    slot 04:00 PM
+                    slot 02:00 PM
+                    slot 02:15 PM
+                    slot 03:30 PM
+                    slot 04:00 PM
+            box.booker
+                h2.book-info Alps Clinic
+                    br
+                    span.time  No time slot selected
+                button Book Appointment

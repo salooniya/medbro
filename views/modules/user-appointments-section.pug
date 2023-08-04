@@ -1,0 +1,27 @@
+section.user-appointments
+    inner
+        container
+            box.menu
+                a.menu-item(href=`/users/${id}/appointments`).active Appointments
+                a.menu-item(href=`/users/${id}/profile`) Profile
+                a.menu-item(href='/logout') Logout
+            box.window
+                div.window-list
+                    each app in appointments
+                        div.app(data-id=`${app._id}`)
+                            h2 #{app.doctorFullName}
+                                span.fee ₹#{app.clinicFee}
+                            div.bottom
+                                p
+                                    | #{app.clinicName}
+                                    br
+                                    | #{app.clinicLocation}
+                                    br
+                                    | #{app.clinicTime.toLocaleDateString(undefined, { weekday: 'short' })}, #{app.clinicTime.toLocaleString(undefined, {month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit'})}
+                                div
+                                    if app.accepted === true
+                                        button.accepted ACCEPTED
+                                    else if app.accepted === false
+                                        button.rejected REJECTED
+                                    else
+                                        button.pending PENDING

@@ -1,0 +1,43 @@
+section.search
+    //div.sort
+    //    span.fee-sort-inc Sort by clinic fee (Inc)
+    //    span.fee-sort-dec Sort by Clinic fee (Dec)
+    //    br
+    //    span.fee-exp-inc Sort by experience (Inc)
+    //    span.fee-exp-dec Sort by experience (Dec)
+    //    br
+    //    span.reset Reset filters
+
+    div.sort-bar
+        container
+            div
+                label(for='sort') Sort By:
+                select(id="sort")
+                    option(value="") None
+                    option(value="clinicFee") Fees
+                    option(value="experience") Experience
+            div
+                label(for='order') Order By:
+                select(id="order")
+                    option(value="") Increasing
+                    option(value="-") Decreasing
+            div
+                label(for='location') Location
+                input(type='text' id='location' placeholder='Ex. Delhi')
+            div
+                button.button
+                    i search
+                button.refresh
+                    i refresh
+
+
+    inner
+        each doc in results
+            a.item(href=`http://localhost:3000/doctors/${doc._id}`)
+                div.image
+                    img(src=`/images/${doc.profilePhoto || 'default.png'}`)
+                div.info
+                    h2 Dr. #{doc.firstName} #{doc.lastName}
+                    p #{doc.specializations}
+                    p #{doc.experience} Years Experience
+                    h3 #{doc.clinicLocation} ( ₹#{doc.clinicFee} )

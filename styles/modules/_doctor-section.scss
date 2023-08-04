@@ -1,0 +1,266 @@
+section.doctor {
+  background-color: #0D47A1;
+
+  inner {
+    max-width: 1024px;
+    padding: 10rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  container {
+    background-color: white;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  box.top {
+    display: flex;
+    gap: 3rem;
+    border-radius: 0.5rem;
+
+    div.image {
+      width: 25rem;
+      height: 25rem;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        display: block;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    div.info {
+      flex: 2;
+
+      h2 {
+        font-weight: $fw-500;
+        font-size: $fz-m2;
+        color: #1976d2;
+        margin-bottom: 0.6rem;
+      }
+
+      p {
+        font-size: $fz-r4;
+        color: gray;
+        position: relative;
+        margin-top: 0.8rem;
+      }
+
+      h3 {
+        font-weight: $fw-500;
+        font-size: $fz-r4;
+        color: #343a40;
+        margin-top: 0.2rem;
+      }
+    }
+  }
+
+  hr {
+    outline: none;
+    border: none;
+    border: 1px solid lightgray;
+  }
+
+  box.booking {
+    position: relative;
+
+    h2 {
+      font-size: $fz-r6;
+      font-weight: $fw-600;
+    }
+
+    h3 {
+      font-size: $fz-r4;
+    }
+
+    .fee {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-weight: $fw-600;
+      font-size: $fz-r6;
+    }
+  }
+
+  container.book {
+    padding: 0;
+    gap: 0;
+  }
+
+  box.book {
+
+    .booking {
+      padding: 3rem;
+      box-shadow: none;
+
+      .fee {
+        right: 3rem;
+        top: 3rem;
+      }
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #212529;
+      color: white;
+      padding: 1.5rem 3rem;
+      font-size: $fz-r6;
+      font-weight: $fw-500;
+
+      .change {
+        float: right;
+        display: flex;
+        align-items: center;
+        font-weight: $fw-500;
+        font-size: $fz-r4;
+        color: #6aabec;
+        cursor: pointer;
+
+        i {
+          font-size: $fz-m2;
+        }
+      }
+    }
+
+    .info {
+      padding: 3rem;
+      position: relative;
+
+      h2 {
+        font-size: $fz-m1;
+        font-weight: $fw-600;
+      }
+    }
+  }
+
+  box.slot {
+    user-select: none;
+    padding: 6rem 3rem;
+    text-align: center;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    user-select: none;
+    min-height: 40rem;
+
+    h2 {
+      font-size: $fz-r6;
+      font-weight: $fw-400;
+      display: inline-flex;
+      align-items: center;
+      color: gray;
+      margin-bottom: 3rem;
+      position: relative;
+
+      span {
+        cursor: pointer;
+        display: block;
+        width: 14rem;
+      }
+
+      span.active {
+        font-weight: $fw-600;
+        color: #212529;
+      }
+
+      span.empty {
+        color: #fa6363;
+      }
+
+      i {
+        font-size: $fz-m2;
+        cursor: pointer;
+        color: #1976d2;
+      }
+    }
+
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: fit-content;
+      margin: auto;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      slot {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        font-size: $fz-r4;
+        transition: background-color 0.2s, color 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #1976d2;
+          color: white;
+        }
+      }
+
+      slot.selected {
+        background-color: #1976d2;
+        color: white;
+      }
+    }
+
+    .no-slot {
+      display: block;
+
+      p {
+        font-size: $fz-r4;
+        margin: 3rem 0;
+      }
+    }
+  }
+
+  box.booker {
+    display: flex;
+    padding: 1.5rem 3rem;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-size: $fz-r5;
+      font-weight: $fw-600;
+      line-height: 1.1;
+
+      span {
+        font-size: $fz-r3;
+        font-weight: $fw-400;
+      }
+    }
+
+    button {
+      background-color: #1976d2;
+      color: white;
+      font-size: $fz-r4;
+      padding: 1rem 1.5rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    button.booked {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      background-color: forestgreen;
+
+      i {
+        font-size: $fz-r6;
+      }
+    }
+  }
+
+}
